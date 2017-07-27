@@ -1,0 +1,84 @@
+///
+ // Sass file
+///
+
+// $variables //
+$full-width: 100%;
+$full-height: 100vh;
+$font-stack: "Helvetica", sans-serif;
+$primary-colour: #444;
+
+// @mixin for horizontal and vertical centre //
+@mixin display-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+    body {
+        width: $full-width;
+        height: $full-height;
+        @include display-flex;
+        margin: 0;
+        padding: 20px;
+        font-family: $font-stack;
+        color: $primary-colour;
+    }
+
+        a { color: dodgerblue; }
+
+        .error { color: #cc0000; }
+        .success { color: #009933; }
+        .home { position: absolute; top: 10px; left: 10px; }
+        .required { margin-bottom: 0; font-size: 12px; }
+        i.ion-ios-locked, i.ion-happy-outline { font-size: 200px; }
+        i.ion-ios-home { font-size: 40px; }
+
+// Nested styles for <form> //
+        form {
+            width: $full-width;
+            max-width: 400px;
+            @include display-flex;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 30px;
+
+            input, button {
+                font-size: 16px;
+            }
+
+            input {
+                width: $full-width;
+                height: 35px;
+                margin-bottom: 10px;
+                padding-left: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+
+                input::placeholder {
+                    font-size: 16px;
+                    font-weight: 300;
+                    color: #999;
+                }
+
+            button {
+                width: $full-width;
+                height: 35px;
+                margin-top: 10px;
+                border-radius: 5px;
+                border: none;
+                color: #fff;
+                background-color: dodgerblue; /* #1e90ff */
+                background: linear-gradient(#1e90ff, #0073e6);
+                &:hover {
+                    cursor: pointer; /* Due to not using <input> */
+                    background: linear-gradient( #0080ff, #0059b3);
+                }
+            }
+        }
